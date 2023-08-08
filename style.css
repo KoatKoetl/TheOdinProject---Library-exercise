@@ -8,21 +8,24 @@ header {
   text-align: center;
   background-color: rgba(184, 135, 11, 0.432);
   color: rgb(0, 0, 0);
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.1rem;
 }
-#bookForm {
+#formContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
 }
-#bookForm form {
+#formContainer form {
   padding: 2rem 1rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   row-gap: 1.5rem;
   font-size: 1.2rem;
   width: 30%;
+}
+#cover {
+  grid-column: 1 / 3;
 }
 #addBook {
   grid-column: 1 / 3;
@@ -42,4 +45,17 @@ header {
   background-color: rgba(116, 85, 6, 0.432);
   color: white;
   transform: scale(0.9);
+}
+
+#booksStorage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 4rem;
+  gap: 20px;
+}
+#booksStorage .card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
+  padding: 2rem;
 }
