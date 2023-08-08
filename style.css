@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+header {
+  padding: 30px;
+  text-align: center;
+  background-color: rgba(184, 135, 11, 0.432);
+  color: rgb(0, 0, 0);
+  letter-spacing: 0.5rem;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
+}
+#main form {
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+}

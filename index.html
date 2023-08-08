@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Small Library</h1>
+    </header>
+    <div id="main">
+      <form action="/" method="get">
+        <label for="bookName">Book name</label>
+        <input type="text" class="bookName" name="bookName" />
+        <label for="bookAuthor">Book author</label>
+        <input type="text" class="bookAuthor" name="bookAuthor" />
+        <label for="releaseYear">Release year</label>
+        <input type="number" class="releaseYear" name="releaseYear" />
+        <label for="pages">Pages</label>
+        <input type="number" class="pages" name="pages" />
+        <label for="readCheck">Want to read?</label>
+        <input type="checkbox" name="readCheck" />
+        <button id="addBook" type="submit">Add new book</button>
+      </form>
+    </div>
+  </body>
+</html>
