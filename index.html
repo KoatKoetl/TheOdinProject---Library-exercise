@@ -6,21 +6,24 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header>
       <h1>Small Library</h1>
     </header>
-    <div id="main">
+    <div id="bookForm">
       <form action="/" method="get">
         <label for="bookName">Book name</label>
-        <input type="text" class="bookName" name="bookName" />
+        <input type="text" class="bookName" name="bookName" required />
         <label for="bookAuthor">Book author</label>
-        <input type="text" class="bookAuthor" name="bookAuthor" />
-        <label for="releaseYear">Release year</label>
-        <input type="number" class="releaseYear" name="releaseYear" />
+        <input type="text" class="bookAuthor" name="bookAuthor" required />
+        <label for="releaseYear">Release date</label>
+        <input type="date" class="releaseYear" name="releaseYear" required />
         <label for="pages">Pages</label>
-        <input type="number" class="pages" name="pages" />
+        <input type="number" class="pages" name="pages" required min="1" max="1000" />
         <label for="readCheck">Want to read?</label>
         <input type="checkbox" name="readCheck" />
         <button id="addBook" type="submit">Add new book</button>
