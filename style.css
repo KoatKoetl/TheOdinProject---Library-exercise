@@ -54,8 +54,12 @@ header {
   gap: 20px;
 }
 #booksStorage .card {
-  display: flex;
-  flex-direction: column;
   box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
   padding: 2rem;
+}
+.card p {
+  margin-bottom: 1rem;
+}
+#remove-button {
+  padding: 0.3rem 0.9rem;
 }
