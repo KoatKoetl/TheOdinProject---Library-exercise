@@ -1,4 +1,4 @@
-// Bookd values
+// Books values
 const title = document.getElementById("bookName");
 const author = document.getElementById("bookAuthor");
 const releaseYear = document.getElementById("releaseYear");
@@ -39,11 +39,11 @@ addBook.addEventListener("click", function (event) {
 });
 
 clearCache.addEventListener("click", () => {
+  // Clear the Array with books
   myLibrary.length = 0;
+  // Set order counter from start
   bookOrder = 0;
-  // while (booksStorage.firstChild) {
-  //   booksStorage.removeChild(booksStorage.lastChild);
-  // }
+  // Delete all child from book storage div
   booksStorage.replaceChildren();
 });
 
@@ -53,6 +53,7 @@ function book(title, author, releaseYear, pages) {
   this.releaseYear = releaseYear;
   this.pages = pages;
 }
+
 //Funcion to add
 function addBookToLibrary() {
   //Check the form if it's empty then show alert otherwise push the values to array
@@ -76,19 +77,37 @@ function showBooks() {
 
     //Create paragraph with all info about book
     const cardInfo = document.createElement("p");
-    cardInfo.textContent = `${book.title} by ${book.author} released on ${book.releaseYear} with ${book.pages} pages`;
+    cardInfo.textContent = `${book.title} by ${book.author}. Released on ${book.releaseYear}. Pages:${book.pages}`;
 
     // const bookCover = document.createElement("img");
 
     //Create remove button
     const removeButton = document.createElement("button");
-    removeButton.textContent = "remove";
+    removeButton.textContent = "Remove";
     removeButton.setAttribute("id", "remove-button");
     removeButton.setAttribute("onclick", "removeBook(this)");
+
+    //Add read status button
+    const readStatus = document.createElement("button");
+    readStatus.textContent = "In read";
+    readStatus.setAttribute("id", "read-status");
+    readStatus.setAttribute("class", "in-read");
+
+    //Event listener to change read-status by click on button
+    readStatus.addEventListener("click", function () {
+      if (readStatus.textContent === "In read") {
+        readStatus.textContent = "Already read";
+        readStatus.setAttribute("class", "already-read");
+      } else {
+        readStatus.textContent = "In read";
+        readStatus.setAttribute("class", "in-read");
+      }
+    });
 
     //Append card info and remove button on card
     card.appendChild(cardInfo);
     card.appendChild(removeButton);
+    card.appendChild(readStatus);
 
     // Append card to div bookStorage on page
     booksStorage.appendChild(card);

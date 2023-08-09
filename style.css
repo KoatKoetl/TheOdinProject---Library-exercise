@@ -6,7 +6,7 @@
 header {
   padding: 30px;
   text-align: center;
-  background-color: rgba(184, 135, 11, 0.432);
+  background-color: rgba(184, 135, 11, 0.43);
   color: rgb(0, 0, 0);
   letter-spacing: 0.1rem;
 }
@@ -39,10 +39,10 @@ header {
   font-size: 1.2rem;
 }
 #addBook:hover {
-  background-color: rgba(184, 135, 11, 0.432);
+  background-color: rgba(184, 135, 11, 0.43);
 }
 #addBook:active {
-  background-color: rgba(116, 85, 6, 0.432);
+  background-color: rgba(116, 85, 6, 0.43);
   color: white;
   transform: scale(0.9);
 }
@@ -57,10 +57,10 @@ header {
   font-size: 1.2rem;
 }
 #clearCache:hover {
-  background-color: rgba(184, 135, 11, 0.432);
+  background-color: rgba(66, 53, 18, 0.43);
 }
 #addBook:active {
-  background-color: rgba(116, 85, 6, 0.432);
+  background-color: rgba(116, 85, 6, 0.43);
   color: white;
   transform: scale(0.9);
 }
@@ -80,4 +80,43 @@ header {
 }
 #remove-button {
   padding: 0.3rem 0.9rem;
+  background-color: rgba(128, 19, 0, 0.8);
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+  box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
+}
+#read-status {
+  padding: 0.3rem 0.9rem;
+  margin-left: 2rem;
+}
+.in-read {
+  background-color: rgba(0, 128, 0, 0.4);
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-shadow: 1px 1px #fff;
+  box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
+}
+.in-read:hover {
+  background-color: rgba(0, 128, 0, 0.25);
+}
+.in-read:active {
+  background-color: rgba(0, 128, 0, 0.4);
+}
+.already-read {
+  background-color: rgba(128, 19, 0, 0.4);
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-shadow: 1px 1px #fff;
+  box-shadow: rgba(60, 60, 214, 0.1) 10px 8px 5px, rgba(19, 19, 172, 0.1) 0px 16px 56px, rgba(29, 29, 212, 0.1) 0px 24px 80px;
+}
+.already-read:hover {
+  background-color: rgba(128, 19, 0, 0.25);
+}
+.already-read:active {
+  background-color: rgba(128, 19, 0, 0.4);
 }
