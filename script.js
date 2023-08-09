@@ -77,7 +77,7 @@ function showBooks() {
 
     //Create paragraph with all info about book
     const cardInfo = document.createElement("p");
-    cardInfo.textContent = `${book.title} by ${book.author}. Released on ${book.releaseYear}. Pages:${book.pages}`;
+    cardInfo.textContent = `\"${book.title}\" by ${book.author}. Released on ${book.releaseYear}. Pages:${book.pages}`;
 
     // const bookCover = document.createElement("img");
 
