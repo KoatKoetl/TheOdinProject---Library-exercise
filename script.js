@@ -4,8 +4,11 @@ const author = document.getElementById("bookAuthor");
 const releaseYear = document.getElementById("releaseYear");
 const pages = document.getElementById("pages");
 
-// Button to add and div to store the card with book info
+// Buttons
 const addBook = document.getElementById("addBook");
+const clearCache = document.getElementById("clearCache");
+
+// Storage of book cards
 const booksStorage = document.getElementById("booksStorage");
 
 // Form to fill with info about book
@@ -13,6 +16,9 @@ const bookForm = document.getElementById("bookForm");
 
 // Image cover of book
 const cover = document.getElementById("cover");
+
+const myLibrary = [];
+let bookOrder = 0;
 
 // Click on button add book call all needed functions
 addBook.addEventListener("click", function (event) {
@@ -32,8 +38,14 @@ addBook.addEventListener("click", function (event) {
   }
 });
 
-const myLibrary = [];
-bookOrder = 0;
+clearCache.addEventListener("click", () => {
+  myLibrary.length = 0;
+  bookOrder = 0;
+  // while (booksStorage.firstChild) {
+  //   booksStorage.removeChild(booksStorage.lastChild);
+  // }
+  booksStorage.replaceChildren();
+});
 
 function book(title, author, releaseYear, pages) {
   this.title = title;
