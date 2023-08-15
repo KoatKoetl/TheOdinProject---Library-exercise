@@ -23,19 +23,11 @@ let bookOrder = 0;
 // Click on button add book call all needed functions
 addBook.addEventListener("click", function (event) {
   event.preventDefault();
-  addBookToLibrary();
-  showBooks();
+  books.addBookToLibrary();
+  books.showBooks();
 
   // Clear form only when all values are entered
-  if (title.value && author.value && releaseYear.value && pages.value) {
-    // Select all input elements from the form by id
-    const inputElements = document.querySelectorAll("#bookName, #bookAuthor, #releaseYear, #pages");
-
-    // Loop through all elements and set it's values to "" after clicking buttonn Add book
-    inputElements.forEach((input) => {
-      input.value = "";
-    });
-  }
+  books.clearAfterSubmit();
 });
 
 clearCache.addEventListener("click", () => {
@@ -47,26 +39,35 @@ clearCache.addEventListener("click", () => {
   booksStorage.replaceChildren();
 });
 
-function book(title, author, releaseYear, pages) {
-  this.title = title;
-  this.author = author;
-  this.releaseYear = releaseYear;
-  this.pages = pages;
-}
-
-//Funcion to add
-function addBookToLibrary() {
-  //Check the form if it's empty then show alert otherwise push the values to array
-  if (!(title.value && author.value && releaseYear.value && pages.value)) {
-    alert('Fill the form. \nClick "Add new book" button to add it to your library');
-  } else {
-    myLibrary.push(new book(title.value, author.value, releaseYear.value, pages.value));
+class books {
+  constructor(title, author, releaseYear, pages) {
+    this.title = title;
+    this.author = author;
+    this.releaseYear = releaseYear;
+    this.pages = pages;
   }
-}
 
-function showBooks() {
-  //Check if form insn't empty
-  if (title.value && author.value && releaseYear.value && pages.value) {
+  static addBookToLibrary() {
+    if (!(title.value && author.value && releaseYear.value && pages.value)) {
+      alert('Fill the form. \nClick "Add new book" button to add it to your library');
+    } else {
+      myLibrary.push(new books(title.value, author.value, releaseYear.value, pages.value));
+    }
+  }
+
+  static clearAfterSubmit() {
+    if (title.value && author.value && releaseYear.value && pages.value) {
+      // Select all input elements from the form by id
+      const inputElements = document.querySelectorAll("#bookName, #bookAuthor, #releaseYear, #pages");
+
+      // Loop through all elements and set it's values to "" after clicking buttonn Add book
+      inputElements.forEach((input) => {
+        input.value = "";
+      });
+    }
+  }
+
+  static showBooks() {
     // Take last elemet from Array
     const book = myLibrary[myLibrary.length - 1];
 
@@ -94,7 +95,7 @@ function showBooks() {
     readStatus.setAttribute("class", "in-read");
 
     //Event listener to change read-status by click on button
-    readStatus.addEventListener("click", function () {
+    readStatus.addEventListener("click", () => {
       if (readStatus.textContent === "In read") {
         readStatus.textContent = "Already read";
         readStatus.setAttribute("class", "already-read");
